@@ -6,40 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css
-"
-    />
-    <link rel="stylesheet" href="src/style.css" />
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+      />
+    <link
+    rel="stylesheet" 
+    href="src/style.css" />
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
       <div class="weather-app-wrapper">
-        <h1>Vienna</h1>
-        <ul>
-          <li>Wednesday 15:30</li>
-          <li>Rain</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/thunderstorms.png"
-              alt="Rain"
-            />
-            25°C | °F
-          </div>
-          <div class="col-6">
+        <div class="weather-app">
+          <div class="overview">
+            <h1>Vienna</h1>
             <ul>
-              <li>Preciptitation: 88%</li>
-              <li>Humidity: 55%</li>
-              <li>Wind: 13 km/h</li>
+              <li>
+                Wednesday 15:30
+              </li>
+              <li>
+                Rain
+              </li>
             </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/thunderstorms.png"
+                  alt="Rain"
+                  />
+                <div class="float">
+                  <strong>25</strong><span class="units">°C | <a href="#">°F</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>
+                  Humidity: 55%
+                </li>
+                <li>
+                  Wind: 13 km/h
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <small>
-          <a href="https://github.com/JulWe/Vanilla-WeatherApp" target="_blank"
-            >Open source code</a
-          >
+          <a href="https://github.com/JulWe/Vanilla-WeatherApp" target="_blank">
+            Open source code
+          </a>
           by Julia Weissenbacher
         </small>
       </div>
