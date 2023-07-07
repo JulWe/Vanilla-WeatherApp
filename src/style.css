@@ -28,6 +28,10 @@ a {
   text-decoration: none;
 }
 
+#description {
+  text-transform: capitalize;
+}
+
 .weather-app-wrapper {
   max-width: 600px;
   margin: 40px auto;
