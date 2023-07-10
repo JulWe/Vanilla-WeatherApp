@@ -65,3 +65,12 @@ a {
   font-size: 20px;
   top: -30px;
 }
+
+.weather-temperature .active {
+  color: grey;
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
