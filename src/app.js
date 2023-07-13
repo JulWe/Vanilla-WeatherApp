@@ -22,8 +22,9 @@ return `${day} ${hours}:${minutes}`;
 }
 
 
-function displayForecast() {
-let forecastElement = document.querySelector("#forecast");
+function displayForecast(response) {
+    console.log(response.data.daily);
+    let forecastElement = document.querySelector("#forecast");
 
 let forecastHTML = `<div class="row">`;
 let days = ["Fri","Sat", "Sun", "Mon"];
@@ -51,6 +52,11 @@ forecastHTML = forecastHTML + `</div>`;
 forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+    let apiKey = "29a19a2a04o29b700f9cbf09t43af556";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayForecast);
+}
 
 function displayTemperature(response) {
 let temperatureElement = document.querySelector("#temperature");
@@ -72,6 +78,8 @@ dateElement.innerHTML = formatDate(response.data.time * 1000);
 iconElement.setAttribute("src",`http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`);
 iconElement.setAttribute("alt", response.data.condition.description);
 
+
+getForecast(response.data.coordinates);
 }
 
 function search(city) {
@@ -120,4 +128,3 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
 search("Vienna");
-displayForecast();
