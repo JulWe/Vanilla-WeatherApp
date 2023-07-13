@@ -22,6 +22,35 @@ return `${day} ${hours}:${minutes}`;
 }
 
 
+function displayForecast() {
+let forecastElement = document.querySelector("#forecast");
+
+let forecastHTML = `<div class="row">`;
+let days = ["Fri","Sat", "Sun", "Mon"];
+days.forEach(function(day){
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+      <div class="weather-forecast-date">${day}</div>
+        <img
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+          alt=""
+          width="40"
+        />
+        <div class="weather-forecast-temperature">
+          <span class="weather-forecast-temperature-maximum">27°</span>
+          <span class="weather-forecast-temperature-minimum">20°</span>
+        </div>
+      </div>
+    
+    `;
+}) 
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+}
+
 
 function displayTemperature(response) {
 let temperatureElement = document.querySelector("#temperature");
@@ -77,6 +106,7 @@ function displayCelsiusTemperature(event) {
 
 let celsiusTemperature = null;
 
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
@@ -90,3 +120,4 @@ celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
 search("Vienna");
+displayForecast();
